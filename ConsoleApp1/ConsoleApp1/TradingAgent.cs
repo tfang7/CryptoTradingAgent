@@ -41,7 +41,6 @@ namespace CryptoTrading
             mainThread.Start(threadArgs);
             Console.ReadLine();
         }
-        // Input 0: List of coin types as strings
         // Dictionary can be of variable length dependent on user input
         // Input 0: kucoin client for obtaining exchange rates, 1: String List of coins to search for.
         private static void AgentStep(object threadArgs)
