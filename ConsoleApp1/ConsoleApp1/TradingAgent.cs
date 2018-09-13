@@ -117,7 +117,7 @@ namespace CryptoTrading
                     bool isProfitable = coin.lastDealPrice - coin.buyPrice > 0.0d;
                     if (coin.numOwned > 0 && isProfitable)
                     {
-                        profit = coin.lastDealPrice * coin.numOwned;
+                        transactionValue = coin.lastDealPrice * coin.numOwned;
                         Console.WriteLine("Sell " + coin.numOwned + " " + coin.type + " at $" + transactionValue);
 
                         availableBuyingPower += transactionValue;
