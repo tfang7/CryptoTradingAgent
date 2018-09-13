@@ -113,7 +113,6 @@ namespace CryptoTrading
                 {
                     // Currently sells as soon as it is profitable
                     // i.e. when the lastDealPrice is greater than the buy in price.
-                    transactionValue = 0.0d;
                     bool isProfitable = coin.lastDealPrice - coin.buyPrice > 0.0d;
                     if (coin.numOwned > 0 && isProfitable)
                     {
