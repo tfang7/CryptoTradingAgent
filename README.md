@@ -1,5 +1,4 @@
 # CryptoTradingAgent
-Assignment for Crypto Commonwealth Interview
 
 Uses KucoinAPI to obtain current cryptocurrency prices of BTC, ETH, BCH, NEO.
 
