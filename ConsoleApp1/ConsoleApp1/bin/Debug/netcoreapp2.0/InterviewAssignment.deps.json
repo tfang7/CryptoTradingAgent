@@ -1,15 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "16061bac58d5fd2317adf5718eb345e67aeed757"
+    "signature": "aea426fa519477eed9f9af74ebcc0e8254d68e74"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "InterviewAssignment/1.0.0": {
         "dependencies": {
-          "KuCoinApi.NetCore": "1.4.0",
-          "xunit.runner.console": "2.4.0"
+          "KuCoinApi.NetCore": "1.4.0"
         },
         "runtime": {
           "InterviewAssignment.dll": {}
@@ -1033,7 +1032,6 @@
           }
         }
       },
-      "xunit.runner.console/2.4.0": {},
       "xunit.runner.visualstudio/2.4.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "15.0.0"
@@ -1571,13 +1569,6 @@
       "sha512": "sha512-dVJIi7y7uSvFEInNIauX3QTtKkFoATb824NT3hHKKvjenhcV8qx1EracbFu2igLvyoVPpN04mYYGCRpAe35Usw==",
       "path": "xunit.extensibility.execution/2.4.0",
       "hashPath": "xunit.extensibility.execution.2.4.0.nupkg.sha512"
-    },
-    "xunit.runner.console/2.4.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-WbdWWnj7MoLkLYDHAXbQzGfYjH4vbyhDad4xwsd3Zr0TeCIeVc/QgEWBTKAnuHJSM+Fpf+F9+Yu85lJ3BG1psQ==",
-      "path": "xunit.runner.console/2.4.0",
-      "hashPath": "xunit.runner.console.2.4.0.nupkg.sha512"
     },
     "xunit.runner.visualstudio/2.4.0": {
       "type": "package",

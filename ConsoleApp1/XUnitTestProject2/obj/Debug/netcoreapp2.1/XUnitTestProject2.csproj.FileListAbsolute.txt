@@ -1,0 +1,17 @@
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.deps.json
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.runtimeconfig.json
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.runtimeconfig.dev.json
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.dll
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\bin\Debug\netcoreapp2.1\XUnitTestProject2.pdb
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csprojAssemblyReference.cache
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csproj.CoreCompileInputs.cache
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.AssemblyInfoInputs.cache
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.AssemblyInfo.cs
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.dll
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.pdb
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\bin\Debug\netcoreapp2.1\InterviewAssignment.dll
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\bin\Debug\netcoreapp2.1\InterviewAssignment.pdb
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\XUnitTestProject2\obj\Debug\netcoreapp2.1\XUnitTestProject2.csproj.CopyComplete

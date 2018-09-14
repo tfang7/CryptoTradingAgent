@@ -11,73 +11,41 @@ namespace CryptoTrading
         private const int numArgs = 2;
 
         //Initial starting cash that agent has to work with.
-        private static double totalBuyingPower = 1000000.0d;
+        private static double totalBuyingPower = 0.0d;
         private static double availableBuyingPower;
 
         //  dictionary agentCoins where key is string representing the coin and the value is a cryptocoin object.
         // ex: "ETH" : Ethereum Cryptocoin object
-        private static Dictionary<string, AgentCoin> agentCoins;
+        private static Dictionary<string, AgentCoin> agentCoins = null;
+        private static List<String> Coins = null;
+        private static KuCoinApiClient kucoinClient = null;
 
-        public TradingAgent(double buyingPower)
+        public TradingAgent(double buyingPower, List<String> inputCoins)
         {
-            totalBuyingPower = buyingPower;
+            Init(buyingPower, inputCoins);
             Console.WriteLine("Beginning Crypto Trading Agent Program...");
-            Init();
-
         }
-
-
-
-        static void Main(string[] args)
+        public double GetBuyingPower()
         {
-            Console.WriteLine("Beginning Crypto Trading Agent Program...");
-            Init();
+            return availableBuyingPower;
         }
-        private static void Init()
+        public List<String> GetCoinTypes()
         {
-            var kucoinClient = new KuCoinApiClient();
-            List<String> Coins = new List<String> { "ETH", "BTC", "BCH", "NEO" };
-
+            return Coins;
+        }
+        public KuCoinApiClient GetKucoinClient()
+        {
+            return kucoinClient;
+        }
+        private static void Init(double buyingPower, List<String> inputCoins)
+        {
+            Coins = inputCoins;
             // Sets available buying power equal to total initially
-            InitBuyingPower();
-
+            totalBuyingPower = buyingPower;
+            kucoinClient = new KuCoinApiClient();
             // Sets up crypto coin disctionary
             InitAgentCoins(Coins);
-
-            Thread mainThread = new Thread(new ParameterizedThreadStart(AgentStep));
-            object threadArgs = new object[numArgs] { kucoinClient, Coins };
-
-            Console.WriteLine("Starting new thread");
-            mainThread.Start(threadArgs);
-            Console.ReadLine();
-        }
-        // Dictionary can be of variable length dependent on user input
-        // Input 0: kucoin client for obtaining exchange rates, 1: String List of coins to search for.
-        private static void AgentStep(object threadArgs)
-        {
-            Array targArray = (Array) threadArgs;
-            
-            //kucoin client parameters
-            KuCoinApiClient kucoinClient = (KuCoinApiClient) targArray.GetValue(0);
-            KuCoinApi.NetCore.Entities.Tick[] Ticks;
-
-            //list of crypto-coins
-            List<String> Coins = (List<String>) targArray.GetValue(1);
-
-            /* bot checks realtime data every x mins/seconds*/
-            // Currently set to update every 10 seconds
-            int seconds = 10000, minutes = 1, hours = 1;
-
-            //Main update loop
-            while (true)
-            {
-                Ticks = kucoinClient.GetTicks();
-                if (Ticks == null) throw new ArgumentNullException("ERR: Ticks received from KucoinAPI is null");
-                
-                Console.WriteLine(GetCoinInfo(Ticks, Coins));
-                DecideTransaction();
-                Thread.Sleep(seconds * minutes * hours);
-            }
+            InitBuyingPower();
 
         }
         // Agent Trading Strategy
@@ -86,9 +54,9 @@ namespace CryptoTrading
         // For simplicity, this agent just spends 1/4th of buying power for each coin.
         // and only buys when the price is the lowest the agent has observed since running.
         // Sell coins as soon as profit can be made.
-        private static void DecideTransaction()
+        public void DecideTransaction()
         {
-            int transactionAmount = 0;
+            double transactionAmount = 0;
             double transactionValue = 0;
             // diversity, spend equal amounts of cash for each coin
             double ratio = totalBuyingPower / agentCoins.Count;
@@ -108,12 +76,7 @@ namespace CryptoTrading
                         transactionValue += coin.lastDealPrice;
                         transactionAmount++;
                     }
-                    Console.WriteLine("Buy " + transactionAmount + " " + coin.type + " at $" + transactionValue);
-
-                    coin.buyPrice = coin.lastDealPrice;
-                    coin.numOwned += transactionAmount;
-
-                    availableBuyingPower -= transactionValue;
+                    BuyCoin(coin, transactionAmount);
                 }
                 // Else consider amount of profit made from selling a coin
                 // Dump all coins when desired amount of profit can be made.
@@ -124,17 +87,36 @@ namespace CryptoTrading
                     bool isProfitable = coin.lastDealPrice - coin.buyPrice > 0.0d;
                     if (coin.numOwned > 0 && isProfitable)
                     {
-                        transactionValue = coin.lastDealPrice * coin.numOwned;
-                        Console.WriteLine("Sell " + coin.numOwned + " " + coin.type + " at $" + transactionValue);
-
-                        availableBuyingPower += transactionValue;
-                        coin.numOwned = 0;
+                        transactionAmount = coin.numOwned;
+                        SellCoin(coin, transactionAmount);
                     }
                 }
             }
         }
+        private void BuyCoin(AgentCoin coin, double amount)
+        {
+            double transactionValue;
+
+            coin.buyPrice = coin.lastDealPrice;
+            coin.numOwned += amount;
+            transactionValue = amount * coin.buyPrice;
+
+            availableBuyingPower -= transactionValue;
+            Console.WriteLine("Buy " + amount + " " + coin.type + " at $" + transactionValue);
+
+        }
+        private void SellCoin(AgentCoin coin, double amount)
+        {
+            double transactionValue;
+            transactionValue = coin.lastDealPrice * amount;
+            
+            availableBuyingPower += transactionValue;
+            coin.numOwned -= amount;
+
+            Console.WriteLine("Sell " + amount + " " + coin.type + " at $" + transactionValue);
+        }
         // Uses KuCoin API to obtain tick info and display in formatted string.
-        private static String GetCoinInfo(KuCoinApi.NetCore.Entities.Tick[] Ticks, List<String> Coins)
+        public String GetCoinInfo(KuCoinApi.NetCore.Entities.Tick[] Ticks, List<String> Coins)
         {
             String tickInfo = InitTickInfo();
             foreach (var tick in Ticks)
@@ -170,10 +152,6 @@ namespace CryptoTrading
         }
         private static void InitBuyingPower()
         {
-            if (totalBuyingPower <= 0)
-            {
-                throw new ArgumentOutOfRangeException("totalBuyingPower", totalBuyingPower, "ERR: Insufficient Buying Power to carry out transactions");
-            }
             availableBuyingPower = totalBuyingPower;
         }
 
