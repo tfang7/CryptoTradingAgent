@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CryptoTrading
 {
-    class TradingAgent
+    public class TradingAgent
     {
         // Number of arguments for agent update thread.
         private const int numArgs = 2;
@@ -17,6 +17,16 @@ namespace CryptoTrading
         //  dictionary agentCoins where key is string representing the coin and the value is a cryptocoin object.
         // ex: "ETH" : Ethereum Cryptocoin object
         private static Dictionary<string, AgentCoin> agentCoins;
+
+        public TradingAgent(double buyingPower)
+        {
+            totalBuyingPower = buyingPower;
+            Console.WriteLine("Beginning Crypto Trading Agent Program...");
+            Init();
+
+        }
+
+
 
         static void Main(string[] args)
         {
@@ -80,7 +90,6 @@ namespace CryptoTrading
         {
             int transactionAmount = 0;
             double transactionValue = 0;
-            double profit;
             // diversity, spend equal amounts of cash for each coin
             double ratio = totalBuyingPower / agentCoins.Count;
 

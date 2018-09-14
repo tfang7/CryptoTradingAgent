@@ -1,0 +1,11 @@
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp2.0\InterviewAssignment.deps.json
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp2.0\InterviewAssignment.runtimeconfig.json
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp2.0\InterviewAssignment.runtimeconfig.dev.json
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp2.0\InterviewAssignment.dll
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\bin\Debug\netcoreapp2.0\InterviewAssignment.pdb
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp2.0\InterviewAssignment.csprojAssemblyReference.cache
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp2.0\InterviewAssignment.csproj.CoreCompileInputs.cache
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp2.0\InterviewAssignment.AssemblyInfoInputs.cache
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp2.0\InterviewAssignment.AssemblyInfo.cs
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp2.0\InterviewAssignment.dll
+C:\Users\dkfan\Documents\CryptoTradingAgent\ConsoleApp1\ConsoleApp1\obj\Debug\netcoreapp2.0\InterviewAssignment.pdb

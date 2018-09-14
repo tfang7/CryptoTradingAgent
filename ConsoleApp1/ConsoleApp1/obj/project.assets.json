@@ -1571,10 +1571,12 @@
           "xunit.extensibility.execution": "[2.4.0]"
         },
         "build": {
-          "build/_._": {}
+          "build/xunit.core.props": {},
+          "build/xunit.core.targets": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/_._": {}
+          "buildMultiTargeting/xunit.core.props": {},
+          "buildMultiTargeting/xunit.core.targets": {}
         }
       },
       "xunit.extensibility.core/2.4.0": {
@@ -1599,6 +1601,12 @@
         },
         "runtime": {
           "lib/netstandard2.0/xunit.execution.dotnet.dll": {}
+        }
+      },
+      "xunit.runner.console/2.4.0": {
+        "type": "package",
+        "build": {
+          "build/xunit.runner.console.props": {}
         }
       },
       "xunit.runner.visualstudio/2.4.0": {
@@ -5260,6 +5268,82 @@
         "xunit.extensibility.execution.nuspec"
       ]
     },
+    "xunit.runner.console/2.4.0": {
+      "sha512": "WbdWWnj7MoLkLYDHAXbQzGfYjH4vbyhDad4xwsd3Zr0TeCIeVc/QgEWBTKAnuHJSM+Fpf+F9+Yu85lJ3BG1psQ==",
+      "type": "package",
+      "path": "xunit.runner.console/2.4.0",
+      "files": [
+        ".signature.p7s",
+        "build/xunit.runner.console.props",
+        "tools/net452/xunit.abstractions.dll",
+        "tools/net452/xunit.console.exe",
+        "tools/net452/xunit.console.exe.config",
+        "tools/net452/xunit.console.x86.exe",
+        "tools/net452/xunit.console.x86.exe.config",
+        "tools/net452/xunit.runner.reporters.net452.dll",
+        "tools/net452/xunit.runner.utility.net452.dll",
+        "tools/net46/xunit.abstractions.dll",
+        "tools/net46/xunit.console.exe",
+        "tools/net46/xunit.console.exe.config",
+        "tools/net46/xunit.console.x86.exe",
+        "tools/net46/xunit.console.x86.exe.config",
+        "tools/net46/xunit.runner.reporters.net452.dll",
+        "tools/net46/xunit.runner.utility.net452.dll",
+        "tools/net461/xunit.abstractions.dll",
+        "tools/net461/xunit.console.exe",
+        "tools/net461/xunit.console.exe.config",
+        "tools/net461/xunit.console.x86.exe",
+        "tools/net461/xunit.console.x86.exe.config",
+        "tools/net461/xunit.runner.reporters.net452.dll",
+        "tools/net461/xunit.runner.utility.net452.dll",
+        "tools/net462/xunit.abstractions.dll",
+        "tools/net462/xunit.console.exe",
+        "tools/net462/xunit.console.exe.config",
+        "tools/net462/xunit.console.x86.exe",
+        "tools/net462/xunit.console.x86.exe.config",
+        "tools/net462/xunit.runner.reporters.net452.dll",
+        "tools/net462/xunit.runner.utility.net452.dll",
+        "tools/net47/xunit.abstractions.dll",
+        "tools/net47/xunit.console.exe",
+        "tools/net47/xunit.console.exe.config",
+        "tools/net47/xunit.console.x86.exe",
+        "tools/net47/xunit.console.x86.exe.config",
+        "tools/net47/xunit.runner.reporters.net452.dll",
+        "tools/net47/xunit.runner.utility.net452.dll",
+        "tools/net471/xunit.abstractions.dll",
+        "tools/net471/xunit.console.exe",
+        "tools/net471/xunit.console.exe.config",
+        "tools/net471/xunit.console.x86.exe",
+        "tools/net471/xunit.console.x86.exe.config",
+        "tools/net471/xunit.runner.reporters.net452.dll",
+        "tools/net471/xunit.runner.utility.net452.dll",
+        "tools/net472/xunit.abstractions.dll",
+        "tools/net472/xunit.console.exe",
+        "tools/net472/xunit.console.exe.config",
+        "tools/net472/xunit.console.x86.exe",
+        "tools/net472/xunit.console.x86.exe.config",
+        "tools/net472/xunit.runner.reporters.net452.dll",
+        "tools/net472/xunit.runner.utility.net452.dll",
+        "tools/netcoreapp1.0/xunit.abstractions.dll",
+        "tools/netcoreapp1.0/xunit.console.deps.json",
+        "tools/netcoreapp1.0/xunit.console.dll",
+        "tools/netcoreapp1.0/xunit.console.dll.config",
+        "tools/netcoreapp1.0/xunit.console.runtimeconfig.json",
+        "tools/netcoreapp1.0/xunit.runner.reporters.netcoreapp10.dll",
+        "tools/netcoreapp1.0/xunit.runner.utility.netcoreapp10.dll",
+        "tools/netcoreapp1.0/xunit.runner.utility.netcoreapp10.xml",
+        "tools/netcoreapp2.0/xunit.abstractions.dll",
+        "tools/netcoreapp2.0/xunit.console.deps.json",
+        "tools/netcoreapp2.0/xunit.console.dll",
+        "tools/netcoreapp2.0/xunit.console.dll.config",
+        "tools/netcoreapp2.0/xunit.console.runtimeconfig.json",
+        "tools/netcoreapp2.0/xunit.runner.reporters.netcoreapp10.dll",
+        "tools/netcoreapp2.0/xunit.runner.utility.netcoreapp10.dll",
+        "tools/netcoreapp2.0/xunit.runner.utility.netcoreapp10.xml",
+        "xunit.runner.console.2.4.0.nupkg.sha512",
+        "xunit.runner.console.nuspec"
+      ]
+    },
     "xunit.runner.visualstudio/2.4.0": {
       "sha512": "spS399J48cRVHJL4BRPT3FXBlINlJ6hh9f/8VfgkPRVjsqTU+CuDxvqsFzdj6++k+HxfFJP0ZPnbnLVNeH8zhQ==",
       "type": "package",
@@ -5293,7 +5377,9 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "KuCoinApi.NetCore >= 1.4.0",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "xunit >= 2.4.0",
+      "xunit.runner.console >= 2.4.0"
     ]
   },
   "packageFolders": {
@@ -5303,9 +5389,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dkfan\\Documents\\CryptoTradingAgent\\ConsoleApp1\\ConsoleApp1\\CryptoCommonwealthAssignment.csproj",
-      "projectName": "CryptoCommonwealthAssignment",
-      "projectPath": "C:\\Users\\dkfan\\Documents\\CryptoTradingAgent\\ConsoleApp1\\ConsoleApp1\\CryptoCommonwealthAssignment.csproj",
+      "projectUniqueName": "C:\\Users\\dkfan\\Documents\\CryptoTradingAgent\\ConsoleApp1\\ConsoleApp1\\InterviewAssignment.csproj",
+      "projectName": "InterviewAssignment",
+      "projectPath": "C:\\Users\\dkfan\\Documents\\CryptoTradingAgent\\ConsoleApp1\\ConsoleApp1\\InterviewAssignment.csproj",
       "packagesPath": "C:\\Users\\dkfan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\dkfan\\Documents\\CryptoTradingAgent\\ConsoleApp1\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
@@ -5342,9 +5428,20 @@
             "version": "[1.4.0, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "xunit": {
+            "target": "Package",
+            "version": "[2.4.0, )"
+          },
+          "xunit.runner.console": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.4.0, )"
           }
         },
         "imports": [
